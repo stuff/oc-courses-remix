@@ -1,0 +1,31 @@
+{
+    "workbench.colorCustomizations": {
+        "editorGroupHeader.tabsBackground": "#000",
+        "tab.activeBackground": "#1e1e1e",
+        "tab.activeBorderTop": "#888888",
+        "tab.inactiveBackground": "#000",
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiBlue": "#268bd2",
+        "terminal.ansiBrightBlack": "#586e75",
+        "terminal.ansiBrightBlue": "#839496",
+        "terminal.ansiBrightCyan": "#93a1a1",
+        "terminal.ansiBrightGreen": "#586e75",
+        "terminal.ansiBrightMagenta": "#6c6ec6",
+        "terminal.ansiBrightRed": "#cb4b16",
+        "terminal.ansiBrightWhite": "#fdf6e3",
+        "terminal.ansiBrightYellow": "#657b83",
+        "terminal.ansiCyan": "#2aa198",
+        "terminal.ansiGreen": "#859901",
+        "terminal.ansiMagenta": "#d33682",
+        "terminal.ansiRed": "#dc322f",
+        "terminal.ansiWhite": "#eee8d5",
+        "terminal.ansiYellow": "#b58901",
+        "terminal.background": "#1a1a1a",
+        "terminal.foreground": "#839496",
+        "terminalCursor.background": "#003541",
+        "terminalCursor.foreground": "#839496",
+        "activityBar.background": "#21330C",
+        "titleBar.activeBackground": "#2E4711",
+        "titleBar.activeForeground": "#F7FCF2"
+    }
+}

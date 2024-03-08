@@ -1,0 +1,118 @@
+:root {
+  --course-header-height: 60px;
+  --toc-drawer-width: 500px;
+  --toc-item-height: 48px;
+  --course-content-width: 832px;
+
+  --color-paper: #fff;
+  --color-text: rgb(0 0 0 / 85%);
+  --color-line: rgb(0 0 0 / 15%);
+  --color-line: rgb(220 220 220);
+  --color-field-background: #fff;
+  --color-brand: #7451eb;
+  --color-search-hit-bg: #f0f0f0;
+  --color-theme-icon: #001694;
+  --color-course-menu-icon-color: rgb(0 0 0 / 25%);
+  --color-course-content-semi-transparent-background: rgb(0 0 0 / 4%);
+  --color-course-content-semi-transparent-line: rgb(0 0 0 / 15%);
+
+  --color-course-content-information: #3fa5db;
+  --color-course-content-information-background: #e6f4fa;
+  --color-course-content-information-line: #8fb6c7;
+
+  --color-course-content-warning: #f39539;
+  --color-course-content-warning-background: #fdefe1;
+  --color-course-content-warning-line: #e4b689;
+
+  --color-course-content-error: #c21936;
+  --color-course-content-error-background: #ffdfe4;
+  --color-course-content-error-line: #eea6b1;
+
+  --color-course-content-question: #565656;
+  --color-course-content-question-background: #f4f4f4;
+  --color-course-content-question-line: #c5c5c5;
+
+  --alpha-course-content-highlited: 1;
+
+  --color-local-highlite: rgb(60 60 60);
+  --color-local-highlite-lighter2: rgb(80, 80, 80);
+  --color-local-highlite-lighter2: rgb(100, 100, 100);
+  --color-local-highlite-lighter3: rgb(155, 155, 155);
+  --color-local-highlite-lighter4: rgb(228, 228, 228);
+}
+
+.theme-dark {
+  --color-paper: rgb(23 23 23);
+  --color-text: rgb(255 255 255 / 50%);
+  --color-line: rgb(78, 78, 78);
+  --color-solide-line: rgb(255 255 255 / 15%);
+  --color-field-background: rgba(255, 255, 255, 0.062);
+  --color-brand: #4d4d4d;
+  --color-search-hit-bg: #2c2c2c;
+  --color-theme-icon: #636100;
+  --color-course-menu-icon-color: rgb(255 255 255 / 25%);
+  --color-course-content-semi-transparent-background: rgb(255 255 255 / 8%);
+  --color-course-content-semi-transparent-line: rgb(255 255 255 / 15%);
+
+  --color-course-content-information: #076289;
+  --color-course-content-information-background: #0b2835;
+  --color-course-content-information-line: #044561;
+
+  --color-course-content-warning: #724921;
+  --color-course-content-warning-background: #432100;
+  --color-course-content-warning-line: #593411;
+
+  --color-course-content-error: #781d2b;
+  --color-course-content-error-background: #370009;
+  --color-course-content-error-line: #4d0b15;
+
+  --color-course-content-question: #5a5a5a;
+  --color-course-content-question-background: #292929;
+  --color-course-content-question-line: #393939;
+
+  --alpha-course-content-highlited: 0.8;
+
+  & img {
+    filter: brightness(75%);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+
+  --color-search-hit-color: var(--color-text);
+  --color-separator: var(--color-line);
+
+  background: var(--color-paper);
+  color: var(--color-text);
+
+  & .MuiInputBase-root {
+    border: 1px solid var(--color-line);
+    background: var(--color-field-background);
+    color: var(--color-text);
+  }
+
+  & .MuiPaper-root.MuiPaper-root {
+    background-color: var(--color-paper);
+
+    color: var(--color-text);
+  }
+
+  & .MuiIconButton-root {
+    color: var(--color-text);
+  }
+
+  & & .MuiSvgIcon-root {
+    color: inherit;
+  }
+
+  &.prevent-scroll {
+    overflow: hidden;
+  }
+}
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+}

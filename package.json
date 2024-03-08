@@ -11,13 +11,20 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.0.17",
     "@remix-run/css-bundle": "^2.8.0",
     "@remix-run/node": "^2.8.0",
     "@remix-run/react": "^2.8.0",
     "@remix-run/serve": "^2.8.0",
+    "@types/katex": "^0.16.7",
+    "classnames": "^2.5.1",
+    "highlight.js": "^11.9.0",
     "isbot": "^4.1.0",
+    "katex": "^0.16.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.8.0",

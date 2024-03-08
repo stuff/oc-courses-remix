@@ -118,10 +118,10 @@ async function apiCall(
     const a = await fetch(apiUrl, {
       // @ts-ignore
       headers,
-      // cache: 'no-cache',
-      next: {
-        revalidate: CONTENT_CACHE_DELAY_SECONDS,
-      },
+      // // cache: 'no-cache',
+      // next: {
+      //   revalidate: CONTENT_CACHE_DELAY_SECONDS,
+      // },
     });
 
     const result = type === 'text' ? await a.text() : await a.json();
@@ -149,7 +149,7 @@ async function apiCall(
   }
 }
 
-async function getCourseIntroductionHtml(courseId: number) {
+async function getCourseIntroductionHtml(courseId: number): Promise<string> {
   return apiCall('/courses/' + courseId + '/introduction', { type: 'text' });
 }
 
