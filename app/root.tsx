@@ -1,5 +1,6 @@
 import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction } from '@remix-run/node';
+
 import {
   Links,
   LiveReload,
@@ -8,6 +9,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+
+import PageLoaderContainer from '~/components/PageLoaderContainer';
 
 import '@fontsource-variable/inter/wght.css';
 
@@ -27,7 +30,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <PageLoaderContainer>
+          <Outlet />
+        </PageLoaderContainer>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

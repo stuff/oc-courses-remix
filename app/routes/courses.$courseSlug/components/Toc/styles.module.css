@@ -1,5 +1,5 @@
 .toc {
-  width: var(--toc-drawer-width);
+  min-width: var(--toc-drawer-width);
 }
 
 .tocPart {

@@ -62,7 +62,9 @@ export default function TocPart({
     <div className={styles.tocPart}>
       <div className={styles.tocPartTitem}>
         <div>
-          <MdFolderOpen size="1.5rem" opacity={0.5} />
+          <span>
+            <MdFolderOpen size="1.5rem" opacity={0.5} />
+          </span>
           {partTitle}
         </div>
       </div>
