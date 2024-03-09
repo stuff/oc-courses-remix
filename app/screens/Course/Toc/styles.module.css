@@ -15,14 +15,13 @@
     &:hover {
       background-color: var(--color-local-highlite-lighter4);
     }
-    /* background-color: violet; */
   }
   & img {
     width: 120px;
     border-radius: 8px;
+    aspect-ratio: 16/9;
   }
   & > * {
-    /* background: yellow; */
     display: grid;
     align-items: center;
     box-sizing: border-box;

@@ -16,10 +16,11 @@
 }
 
 .actions {
-  margin: 32px 0;
+  width: var(--course-content-width);
+  margin: 32px auto 0 auto;
+
   & div {
-    text-align: center;
-    width: var(--course-content-width);
-    margin: auto;
+    text-align: right;
+    padding: 0 16px;
   }
 }

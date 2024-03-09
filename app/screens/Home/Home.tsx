@@ -1,6 +1,4 @@
-import { ClientOnly } from 'remix-utils/client-only';
-
-import Search from './components/Search';
+import Search from './Search';
 
 // import { json } from '@remix-run/node';
 // import { useLoaderData } from '@remix-run/react';
@@ -96,7 +94,7 @@ import Search from './components/Search';
 //   });
 // }
 
-export default function Courses() {
+export default function Home() {
   // let searchClient;
 
   // if (typeof document === 'undefined') {
@@ -124,7 +122,5 @@ export default function Courses() {
   // const firstChapter = tocData.children[0].children[0];
   // const firstChapterUrl = `/courses/${courseSlug}/${firstChapter.id}-${firstChapter.slug}`;
 
-  return (
-    <ClientOnly fallback={<div>loading</div>}>{() => <Search />}</ClientOnly>
-  );
+  return <Search />;
 }

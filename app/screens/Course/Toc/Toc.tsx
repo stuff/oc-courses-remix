@@ -6,7 +6,7 @@
 // import List from '@mui/material/List';
 import cx from 'classnames';
 import { Link, useParams } from '~/framework';
-
+import ImgixImage from '~/components/ImgixImage';
 import TocPart from './TocPart';
 import TocItem from './TocItem';
 // import TocIntroductionItem from './TocIntroductionItem';
@@ -31,7 +31,7 @@ export default function Toc({
     <nav className={styles.toc}>
       <TocItem href={`/courses/${courseSlug}`} isCurrent={isCurrent}>
         <div className={styles.tocIntro}>
-          <img src={image} />
+          <ImgixImage src={image} width={240} />
           <span>Introduction</span>
         </div>
       </TocItem>

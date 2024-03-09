@@ -1,26 +1,20 @@
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { Outlet } from '@remix-run/react';
 import { useOutlet } from '@remix-run/react';
-import tinycolor from 'tinycolor2';
-import { MdChevronRight } from 'react-icons/md';
 
 import api from '~/lib/api';
 import { cleanClaireHtml } from '~/lib/cleanClaireHtml';
 import { retrieveCachedHtmlContent } from '~/lib/retrieveCachedHtmlContent';
-import CourseContent from '~/components/CourseContent';
-import Button from '~/components/Button';
-import staticImgToImgix from '~/lib/staticImgToImgix';
-import { Link, useParams } from '~/framework';
+import { useParams } from '~/framework';
 
-import Toc from './components/Toc';
-import styles from './styles.module.css';
+import { Course } from '~/screens/Course';
 
 import type {
   LinksFunction,
   LoaderFunctionArgs,
   MetaFunction,
 } from '@remix-run/node';
+
 import type { ApiResultCourse, ApiResultCourseToc } from '~/lib/api';
 
 export const meta: MetaFunction = ({
@@ -92,61 +86,19 @@ export async function loader({ params }: LoaderFunctionArgs) {
   });
 }
 
-export default function Course() {
+export default function CourseIndex() {
   const { course, toc: tocData, introduction } = useLoaderData<typeof loader>();
   const { courseSlug = '' } = useParams();
   const outlet = useOutlet();
 
-  const color1 = tinycolor(course.categoryColor).setAlpha(0.8);
-  const color2 = tinycolor(course.categoryColor).setAlpha(0.5);
-  const color3 = tinycolor(course.categoryColor).setAlpha(0.22);
-  const color4 = tinycolor(course.categoryColor).setAlpha(0.09);
-
-  const firstChapter = tocData.children[0].children[0];
-  const firstChapterUrl = `/courses/${courseSlug}/${firstChapter.id}-${firstChapter.slug}`;
-
   return (
-    <div
-      style={{
-        /* @ts-ignore */
-        '--color-local-highlite': course.categoryColor,
-        '--color-local-highlite-lighter1': color1.toString(),
-        '--color-local-highlite-lighter2': color2.toString(),
-        '--color-local-highlite-lighter3': color3.toString(),
-        '--color-local-highlite-lighter4': color4.toString(),
-      }}
+    <Course
+      course={course}
+      tocData={tocData}
+      courseSlug={courseSlug}
+      introduction={introduction}
     >
-      {/* <h1>{course.title}</h1> */}
-      <div className={styles.wrapper}>
-        <Toc
-          courseSlug={courseSlug}
-          content={tocData}
-          image={staticImgToImgix(course.illustration, 'w=240')}
-        />
-        <div className={styles.courseContentContainer}>
-          <div className={styles.titleContainer}>
-            <h1>{course.title}</h1>
-          </div>
-          {outlet ? (
-            <Outlet />
-          ) : (
-            <>
-              <CourseContent>{introduction}</CourseContent>
-              <div className={styles.actions}>
-                <div>
-                  <Button
-                    component={Link}
-                    icon={MdChevronRight}
-                    to={firstChapterUrl}
-                  >
-                    Start course
-                  </Button>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
+      {outlet}
+    </Course>
   );
 }

@@ -42,7 +42,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{ padding: '0 16px' }}>
         <PageLoaderContainer>
           <Outlet />
         </PageLoaderContainer>
