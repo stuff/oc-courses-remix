@@ -1,0 +1,52 @@
+.toc {
+  min-width: var(--toc-drawer-width);
+}
+
+.tocPart {
+  /* border: 1px solid green; */
+}
+
+.tocItem {
+  & a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    gap: 16px;
+    &:hover {
+      background-color: var(--color-local-highlite-lighter4);
+    }
+    /* background-color: violet; */
+  }
+  & img {
+    width: 120px;
+    border-radius: 8px;
+  }
+  & > * {
+    /* background: yellow; */
+    display: grid;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    min-height: var(--toc-item-height);
+  }
+}
+
+.tocPartTitem {
+  composes: tocItem;
+  background-color: var(--color-local-highlite-lighter3);
+  & > div {
+    display: flex;
+    gap: 16px;
+    font-weight: bold;
+  }
+}
+
+.tocIntro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.currentItem {
+  background-color: var(--color-local-highlite-lighter4);
+}

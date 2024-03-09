@@ -34,12 +34,11 @@ interface ApiResponseError {
   errors: ApiError[];
 }
 
-const cfAccessId = '49ab73f9123d1d8fffbd74a8abf81e70.access';
-const cfAccessSecret =
-  'bdb45105bc2b049a637efb1cf2478c6f8942a22dc85a1e5e892e19c683bfd5fb';
-const clientId = 'tSISbls7y4Pr4e623LCyjgf2';
-const clientSecret = 'X1QC3v80NPFSFvBGPEiUlYHD4gkYQv';
-const host = 'https://api-preprod.openclassrooms.tech';
+const cfAccessId = process.env.OC_CF_ACCESS_ID;
+const cfAccessSecret = process.env.OC_CF_ACCESS_SECRET;
+const clientId = process.env.OC_CLIENT_ID;
+const clientSecret = process.env.OC_CLIENT_SECRET;
+const host = process.env.OC_API_HOST;
 
 let cachedToken: any;
 

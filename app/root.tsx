@@ -8,6 +8,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  json,
+  useLoaderData,
 } from '@remix-run/react';
 
 import PageLoaderContainer from '~/components/PageLoaderContainer';
@@ -20,7 +22,18 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
+export async function loader() {
+  return json({
+    ENV: {
+      PUBLIC_ALGOLIA_APP_ID: process.env.PUBLIC_ALGOLIA_APP_ID,
+      PUBLIC_ALGOLIA_API_KEY: process.env.PUBLIC_ALGOLIA_API_KEY,
+    },
+  });
+}
+
 export default function App() {
+  const data = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
@@ -34,6 +47,13 @@ export default function App() {
           <Outlet />
         </PageLoaderContainer>
         <ScrollRestoration />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
+
         <Scripts />
         <LiveReload />
       </body>
